@@ -1,6 +1,7 @@
 package protagonistes;
 
 import Bataille.Batailles;
+import Bataille.Camps;
 
 public abstract class Personnage {
 	protected int vie;
@@ -26,7 +27,7 @@ public abstract class Personnage {
 	
 	public String die() {
 		String texte=" ";
-		texte+=this.getNom()+" n'a pas survécu \n";
+		texte+=this.getNom()+" n'a pas survï¿½cu \n";
 		//il faut remove ici
 		return texte;
 		}
@@ -43,7 +44,7 @@ public abstract class Personnage {
 		String texte=" ";
 		if(vie<20){
 			vie=20;
-			texte+=this.getNom()+" a récupéré ses points de vie \n";
+			texte+=this.getNom()+" a rï¿½cupï¿½rï¿½ ses points de vie \n";
 		}
 		else{
 			texte+=this.getNom()+" a deja tous ses points de vie \n";
@@ -54,14 +55,14 @@ public abstract class Personnage {
 	
 	public String attaquer(Personnage p,int degat) {
 		String texte=" ";
-		texte+="Le Personnage "+getNom()+" attaque "+p.getNom()+" présente sur la case";
+		texte+="Le Personnage "+getNom()+" attaque "+p.getNom()+" prï¿½sente sur la case";
 		texte+="\n"+p.subirAttaque( this, 10  );
 		return texte;
 	}
 	
 	public String subirAttaque(Personnage p,int nb_degats) {
 		String texte=" ";
-		texte+="La sorciere "+this.getNom()+" est attaquée\n";
+		texte+="La sorciere "+this.getNom()+" est attaquï¿½e\n";
 
 		
 		if(NbArmure!=0){
@@ -87,6 +88,7 @@ public abstract class Personnage {
 			}
 		}
 			texte += this.getNom()+" a : "+this.getVie()+" point de vie";
+			Camps.finPartie();
 			return texte;
 		}
 	

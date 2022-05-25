@@ -7,8 +7,8 @@ import protagonistes.Fee;
 import protagonistes.Sorciere;
 
 public class Camps {
-    private List<Sorciere> witch= new ArrayList<>(16);
-	private List<Fee> fee= new ArrayList<>(16);
+    private static List<Sorciere> witch= new ArrayList<>(16);
+	private static List<Fee> fee= new ArrayList<>(16);
 
 	public void supprimerS(Sorciere w) {
 		witch.remove(w);
@@ -17,15 +17,15 @@ public class Camps {
 		fee.remove(f);
 	}
 
-	public int nbSorcieres() {
+	public static  int nbSorcieres() {
 		return witch.size();
 	}
 
-	public int nbFees() {
+	public static int nbFees() {
 		return fee.size();
 	}
 	
-	public String finPartie(){
+	public static  String finPartie(){
         String txt=" ";
         if (nbSorcieres()==0 || nbFees()==0){
             txt+="C'est la fin de la partie";
